@@ -47,6 +47,8 @@ docutils	<local>
 fannkuch	<local>
 fastapi	<local>
 float	<local>
+gel_edgeql	<local:gel>
+gel_schema	<local:gel>
 genshi	<local>
 go	<local>
 hexiom	<local>

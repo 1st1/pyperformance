@@ -1,0 +1,3 @@
+[tool.pyperformance]
+name = "gel_edgeql"
+extra_opts = ["edgeql"]

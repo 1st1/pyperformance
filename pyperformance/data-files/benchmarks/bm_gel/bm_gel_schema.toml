@@ -1,0 +1,3 @@
+[tool.pyperformance]
+name = "gel_schema"
+extra_opts = ["schema"]

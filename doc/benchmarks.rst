@@ -250,6 +250,27 @@ Create 100,000 point objects which compute ``math.cos()``, ``math.sin()`` and
    than testing performance of class attributes.
 
 
+gel
+---
+
+Benchmarks of the compilers of `Gel <https://www.geldata.com/>`_ (formerly
+EdgeDB), a database built on top of PostgreSQL.  The benchmarks use a subset
+of the Gel server codebase and do not need a database to run:
+
+* ``gel_schema``: Compile a schema of an issue tracker application written
+  in the Gel schema definition language (types with multiple inheritance,
+  links, constraints, indexes, computed properties, access policies, triggers,
+  etc).
+* ``gel_edgeql``: Compile a few EdgeQL queries (a large ``SELECT`` with a deep
+  shape, an ``INSERT`` and an ``UPDATE``) against that schema to SQL.
+
+Gel uses extension modules written in Rust and Cython for parsing EdgeQL and
+for some of its data structures.  The benchmarks use pure-Python replacements
+for those, see ``bm_gel/vendor/README.rst``.
+
+See the `Gel project <https://github.com/geldata/gel>`_.
+
+
 genshi
 ------
 

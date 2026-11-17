@@ -1,0 +1,3 @@
+[tool.pyperformance]
+name = "numpy_gpt"
+extra_opts = ["gpt"]

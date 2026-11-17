@@ -67,6 +67,11 @@ networkx_connected_components	<local:networkx>
 networkx_k_core	<local:networkx>
 nbody	<local>
 nqueens	<local>
+numpy_gmm	<local:numpy>
+numpy_gpt	<local:numpy>
+numpy_hmm	<local:numpy>
+numpy_kalman	<local:numpy>
+numpy_mlp	<local:numpy>
 pathlib	<local>
 pickle	<local>
 pickle_dict	<local:pickle>

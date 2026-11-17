@@ -7,6 +7,8 @@ Version 1.15.0 (unreleased)
 * Bump tornado to 6.6 (fixes ``BufferError`` on PyPy)
 * Bump genshi to 0.7.12 (fixes ``TypeError`` on Python 3.15)
 * Add Gel schema and EdgeQL compiler benchmarks (gel_schema, gel_edgeql)
+* Add NumPy benchmarks (numpy_gpt, numpy_hmm, numpy_kalman, numpy_mlp,
+  numpy_gmm)
 
 Version 1.14.0 (2026-02-07)
 ---------------------------

@@ -1,0 +1,3 @@
+[tool.pyperformance]
+name = "numpy_gmm"
+extra_opts = ["gmm"]

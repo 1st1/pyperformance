@@ -432,6 +432,40 @@ Simple, brute-force N-Queens solver.
 See `Eight queens puzzle <https://en.wikipedia.org/wiki/Eight_queens_puzzle>`_.
 
 
+numpy
+-----
+
+Five well-known algorithms written with `NumPy <https://numpy.org/>`__ the way
+NumPy code usually is: array operations for the numerical work and plain
+Python for the control flow around them.  They differ in how the time divides
+between the interpreter, the fixed cost of calling into NumPy on small arrays,
+and work on larger arrays:
+
+* ``numpy_gpt``: Train a small GPT (the model of Andrej Karpathy's microgpt:
+  embeddings, RMSNorm, causal multi-head attention and a ReLU MLP) with
+  hand-written backpropagation and Adam, one short token sequence per step,
+  then sample from it.  Many products of small matrices; the tokenizer, the
+  optimizer loop and sampling are plain Python.
+* ``numpy_hmm``: Fit a discrete hidden Markov model with the Baum-Welch
+  algorithm and decode sequences with the Viterbi algorithm.  The recursions
+  are Python loops over time steps around small vector-matrix products.
+* ``numpy_kalman``: Track targets from noisy position measurements with a
+  Kalman filter that gates outliers, followed by a Rauch-Tung-Striebel
+  smoother.  A dozen products of 4x4 matrices and a 2x2 inverse per time step,
+  driven by a Python loop.
+* ``numpy_mlp``: Train a multi-layer perceptron classifier built from layer
+  objects, with a softmax cross-entropy loss and an Adam optimizer, on
+  mini-batches of 32 points.
+* ``numpy_gmm``: Reduce a few thousand points with PCA (power iteration), then
+  fit full-covariance Gaussian mixtures by expectation maximization and choose
+  the number of components by the Bayesian information criterion.  Most of the
+  time is spent inside NumPy on whole-array operations.
+
+The input data is generated from fixed seeds.  Each worker process checks the
+result of the workload once before measuring it (the training loss went down,
+the smoothed track is closer to the truth than the filtered one, and so on).
+
+
 pathlib
 -------
 

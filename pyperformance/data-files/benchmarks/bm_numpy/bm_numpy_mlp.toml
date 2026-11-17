@@ -1,0 +1,3 @@
+[tool.pyperformance]
+name = "numpy_mlp"
+extra_opts = ["mlp"]
